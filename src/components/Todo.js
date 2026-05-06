@@ -10,7 +10,7 @@ const Todo = () => {
   };
 
   const deleteItem = (i) => {
-    const newArr = list.filter((item) => item !== value);
+    const newArr = list.filter((item) => item !== i);
     setList(newArr);
   };
 
