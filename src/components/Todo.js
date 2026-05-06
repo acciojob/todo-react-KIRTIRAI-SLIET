@@ -18,7 +18,7 @@ const Todo = () => {
     <div>
       <h1>To-Do List</h1>
       <input type="text" value={text} />
-      <button onClick={addItem} disabled={text === ""}>
+      <button onClick={addItem}>
         Add Todo
       </button>
       <ul>
