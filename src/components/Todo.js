@@ -5,12 +5,12 @@ const Todo = () => {
   const [list, setList] = useState([]);
 
   const addItem = () => {
-    setList((p) => p.push(text));
+    setList((p) => [...p, text]);
     setText("");
   };
 
   const deleteItem = (i) => {
-    const newArr = arr.filter((item) => item !== i);
+    const newArr = list.filter((item) => item !== value);
     setList(newArr);
   };
 
@@ -18,15 +18,13 @@ const Todo = () => {
     <div>
       <h1>To-Do List</h1>
       <input type="text" value={text} />
-      <button onClick={addItem}>
-        Add Todo
-      </button>
+      <button onClick={addItem}>Add Todo</button>
       <ul>
         {list.map((itm, id) => (
           <li key={id}>
             <div>
               {itm}
-              <button onClick={deleteItem(itm)}>Delete</button>
+              <button onClick={() => deleteItem(itm)}>Delete</button>
             </div>
           </li>
         ))}
